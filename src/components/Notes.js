@@ -77,10 +77,10 @@ export default function Notes() {
             <div className="row my-3">
                 <h2>Your Notes</h2>
                 <div className="container">
-                    {notes.length === 0 && 'No Notes To Display'}
+                    {notes?.length === 0 && 'No Notes To Display'}
                 </div>
-                {notes?.map((note) => {
-                    return <Noteitem updateNote={updateNote} note={note} />
+                {notes?.map((note,key) => {
+                    return <Noteitem key={key} updateNote={updateNote} note={note} />
                 })}
             </div>
         </>
