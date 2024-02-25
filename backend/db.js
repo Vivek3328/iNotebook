@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
-const mongoURI = "mongodb+srv://mittal0623:Vivek123@cluster0.ditr35c.mongodb.net/";
+const mongoURI = process.env.MONGO_URL;
 
 mongoose.set("strictQuery", false);
 
-const connectToMongo = ()=>{
-    mongoose.connect(mongoURI, { 
-        useNewUrlParser: true, 
+const connectToMongo = () => {
+    mongoose.connect(mongoURI, {
+        useNewUrlParser: true,
         useUnifiedTopology: true
-    }, () => { 
-        console.log('connected to database myDb ;)') 
+    }, () => {
+        console.log('connected to database myDb')
     })
 }
 
